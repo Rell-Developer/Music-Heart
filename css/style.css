@@ -1,0 +1,127 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+/*---------------- NAVEGADOR ----------------*/
+nav{
+    width: 100%;
+    height: 60px;
+    background-color: rgb(19, 19, 19);
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav a, p{
+
+    width: 70px;
+    height: 35px;
+    padding: 20px 30px 0px 30px;
+    text-decoration: none;
+    color: white;
+    text-align: center;
+}
+
+nav p{
+    padding: 3px 0px 0px 0px;
+    /* background-color: blueviolet; */
+}
+
+nav a:last-child{
+    width: 90px;
+}
+
+/*---------------- Slider ----------------*/
+.slider{
+    width: 100%;
+    height: 500px;
+    background-color: #BD1616;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.4);
+}
+
+/*---------------- Information ----------------*/
+.information{
+    width: 100%;
+    height: 600px;
+    background-color: #FF2626;
+    display: flex;
+}
+
+.information1{
+
+    width: 60%;
+    height: 400px;
+    /* background-color: blue; */
+    margin: 60px 20px 0px 20px;
+    display: flexbox;
+}
+
+.information1 p{
+
+    width: 50%;
+    margin: 80px 40px;
+    font-size: 28px;
+    z-index: 2;
+    position:absolute;
+}
+
+img{
+    width: 450px;
+    height: 450px;
+
+    /* Bordes */
+    border-top-left-radius: 80%;
+    border-top-right-radius: 50%;
+    border-bottom-right-radius: 80%;
+    border-bottom-left-radius: 30%;
+
+    margin: 50px;
+    background-color: #FFE6E6;
+    z-index: 3;
+}
+
+.burbujas{
+    width: 50px;
+    height: 50px;
+    background-color: #BD1616 ;
+    border-radius: 50%;
+    display: inline-block;
+    border: 3px solid #cf2020;
+}
+
+.primer{
+    margin-left: 77px;
+    margin-right: 190px;
+    margin-top: 10px;
+    /* z-index: 1; */
+    /* background-color: brown; */
+}
+
+.segundo{
+    margin-left: 147px;
+    margin-right: 110px;
+    margin-top: 20px;
+    /* background: chartreuse; */
+    /* z-index: 2; */
+}
+
+.tercer{
+    margin-left: 247px;
+    margin-right: 100px;
+    margin-top: 10px;
+    /* z-index: 3; */
+}
+/* 
+.information1 p b{
+    color:black;
+} */
+
+
+
+
+/*---------------- Footer ----------------*/
+footer{
+    width: 100%;
+    height: 300px;
+    background-color: rgb(10, 10, 10);
+}
