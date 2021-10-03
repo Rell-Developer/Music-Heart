@@ -1,6 +1,7 @@
 body{
     margin: 0;
     padding: 0;
+    font-family: 'Fira Sans';
 }
 
 /*---------------- NAVEGADOR ----------------*/
@@ -9,14 +10,28 @@ nav{
     height: 60px;
     background-color: rgb(19, 19, 19);
     display: flex;
-    justify-content: flex-end;
+    justify-content:space-evenly;
+}
+
+nav a:nth-child(2){
+    
+    margin-left: 35%;
+}
+
+nav a:first-child{
+    /* background: #BD1616; */
+    width: 20px;
+    height: 20px;
+    /* justify-items: center; */
+    padding: 0;
 }
 
 nav a, p{
 
     width: 70px;
     height: 35px;
-    padding: 20px 30px 0px 30px;
+    font-size: 15px;
+    padding: 20px 30px 1px 30px;
     text-decoration: none;
     color: white;
     text-align: center;
@@ -28,7 +43,21 @@ nav p{
 }
 
 nav a:last-child{
-    width: 90px;
+    width: 100px;
+}
+
+.icono-nav img{
+    width: 35px;
+    padding: 13px;
+    margin-left: 5px;
+}
+
+nav a:hover{
+    color: #ff0055;
+    border-bottom: 10px solid #BD1616;
+    /* background-color: #BD1616; */
+    transition: 0.35s;
+    /* color:white; */
 }
 
 /*---------------- Slider ----------------*/
@@ -38,6 +67,159 @@ nav a:last-child{
     background-color: #BD1616;
     border-bottom: 2px solid rgba(0, 0, 0, 0.4);
 }
+
+/* Slider y animacion del mismo */
+.slider{
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+}
+
+.slides{
+    width: 500%;
+    height: 350px;
+    display: flex;
+}
+
+.slides input{
+    display: none;
+}
+
+.slide{
+    width: 20%;
+    transition: 2s;
+}
+
+.slide img{
+    width: 100%;
+    height: 350px;
+    transition: 4.5s;
+    /* background: green; */
+}
+
+.slide img:hover{
+    transform: scale3d( 1.1, 1.1, 0);
+}
+
+.slide .description-slide{
+    
+    position: absolute;
+    width: 100%;
+    height: 350px;
+    background-color: rgba(189, 22, 22, 0.35);
+}
+
+.description-slide p{
+
+    text-align: center;
+    width: 32%;
+    font-size: 25px;
+    color: #ffffff;
+    /* background-color: green; */
+}
+
+/* Posicionamiento de los audios */
+
+.reproductor{
+
+    width: 12%;
+    height: 90px;
+    background-color: #FFE6E6;
+    border-radius: 50%;
+    transition: 1s;
+
+}
+
+.reproductor:hover{
+    cursor: pointer;
+    transform: scale3d( 1.1, 1.1, 0);
+}
+
+.audio-right{
+    margin-left: 72%;
+}
+
+/* Navegacion manual slide por css */
+
+.navegation-manual{
+    position: absolute;
+    width: 100%;
+    margin-top: -40px;
+    display: flex;
+    /* justify-content: center; */
+    justify-content: center;
+}
+
+.manual-btn{
+    border: 2px solid white;
+    padding: 5px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 1s;
+}
+
+.manual-btn:not(:last-child){
+    margin-right: 40px;
+}
+
+.manual-btn:hover{
+    background-color: seashell;
+}
+
+#radio1:checked ~ .first{
+    margin-left: 0;
+}
+
+#radio2:checked ~ .first{
+    margin-left: -20%;
+}
+
+#radio3:checked ~ .first{
+    margin-left: -40%;
+}
+
+#radio4:checked ~ .first{
+    margin-left: -60%;
+}
+
+
+/* css para la navegacion automatica */
+
+.navegation-auto{
+    position: absolute;
+    display:flex;
+    width: 100%;
+    justify-content: center;
+    margin-top: 310px;
+}
+
+.navegation-auto div{
+    border: 2px solid white;
+    padding: 5px;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+.navegation-auto div:not(:last-child){
+    margin-right: 40px;
+}
+
+#radio1:checked ~ .navegation-auto .auto-btn1{
+    background: seashell;
+}
+
+#radio2:checked ~ .navegation-auto .auto-btn2{
+    background: seashell;
+}
+
+#radio3:checked ~ .navegation-auto .auto-btn3{
+    background: seashell;
+}
+
+#radio4:checked ~ .navegation-auto .auto-btn4{
+    background: seashell;
+}
+/* Fin del Slider */
 
 /*---------------- Information ----------------*/
 .information{
@@ -65,7 +247,7 @@ nav a:last-child{
     position:absolute;
 }
 
-img{
+.information img{
     width: 450px;
     height: 450px;
 
