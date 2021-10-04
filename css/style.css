@@ -2,8 +2,15 @@ body{
     margin: 0;
     padding: 0;
     font-family: 'Fira Sans';
+    overflow-x: hidden;
 }
 
+/*---------------- SCROLL-BAR ---------------- */
+
+/* Se oculta el scrollbar */
+body::-webkit-scrollbar{    display: none;  }
+
+/* ---------------- FIN DEL SCROLL-BAR ---------------- */
 /*---------------- NAVEGADOR ----------------*/
 nav{
     width: 100%;
@@ -52,11 +59,11 @@ nav a:last-child{
     margin-left: 5px;
 }
 
-nav a:hover{
+nav a:hover:not(.icono-nav){
     color: #ff0055;
     border-bottom: 10px solid #BD1616;
     /* background-color: #BD1616; */
-    transition: 0.35s;
+    transition: 0.4s;
     /* color:white; */
 }
 
@@ -65,7 +72,6 @@ nav a:hover{
     width: 100%;
     height: 500px;
     background-color: #BD1616;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.4);
 }
 
 /* Slider y animacion del mismo */
@@ -93,12 +99,8 @@ nav a:hover{
 .slide img{
     width: 100%;
     height: 350px;
-    transition: 4.5s;
+    transition: 60s;
     /* background: green; */
-}
-
-.slide img:hover{
-    transform: scale3d( 1.1, 1.1, 0);
 }
 
 .slide .description-slide{
@@ -107,6 +109,7 @@ nav a:hover{
     width: 100%;
     height: 350px;
     background-color: rgba(189, 22, 22, 0.35);
+    transition: 60s;
 }
 
 .description-slide p{
@@ -118,25 +121,65 @@ nav a:hover{
     /* background-color: green; */
 }
 
+/* Barra de volumen */
+
+.volume-bar{
+    width: 100%; 
+    height: 80px;
+    padding: 0;
+    margin: 0;
+}
+
+div#mp3_player{
+    width: 100%;
+    height: 50px;
+}
+
+div#mp3_player > div > audio{
+    width: 100%;
+    background: #000;
+    float: left;
+}
+
+div#mp3_player > canvas {
+    width: 100%;
+    height: 80px;
+    /* background: #a9b2b4; */
+    /* float: left; */
+}
+
+.description-slide div:last-child{
+    
+    margin-top: 74px; 
+}
 /* Posicionamiento de los audios */
 
 .reproductor{
 
     width: 12%;
     height: 90px;
-    background-color: #FFE6E6;
+    background-color: rgb(255, 230, 230);
     border-radius: 50%;
     transition: 1s;
-
 }
 
 .reproductor:hover{
     cursor: pointer;
-    transform: scale3d( 1.1, 1.1, 0);
+    transform: scale( 1.1);
 }
 
 .audio-right{
     margin-left: 72%;
+}
+
+.flecha{
+
+    width: 50%;
+    height: 70px;
+    /* margin: 10px; */
+    border-radius: 50%;
+    /* background-color: green; */
+
 }
 
 /* Navegacion manual slide por css */
@@ -224,7 +267,7 @@ nav a:hover{
 /*---------------- Information ----------------*/
 .information{
     width: 100%;
-    height: 600px;
+    height: 700px;
     background-color: #FF2626;
     display: flex;
 }
@@ -232,9 +275,9 @@ nav a:hover{
 .information1{
 
     width: 60%;
-    height: 400px;
+    height: 500px;
     /* background-color: blue; */
-    margin: 60px 20px 0px 20px;
+    margin: 160px 20px 0px 20px;
     display: flexbox;
 }
 
@@ -243,7 +286,6 @@ nav a:hover{
     width: 50%;
     margin: 80px 40px;
     font-size: 28px;
-    z-index: 2;
     position:absolute;
 }
 
@@ -258,6 +300,7 @@ nav a:hover{
     border-bottom-left-radius: 30%;
 
     margin: 50px;
+    margin-top: 150px;
     background-color: #FFE6E6;
     z-index: 3;
 }
