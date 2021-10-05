@@ -1,23 +1,76 @@
 //Variables
-const reproductor = document.querySelector('.reproductor');
+let reproductor;
+const musica = document.querySelectorAll('.reproductor');
+// let btns = document.querySelectorAll('.radio-btns');
+
 let reproduciendoMusica = false;
 let slideImg; //Imagen del slider
 let audio; //La musica a reproducir
 
 let contador = 1;
 
+//Booleanos para la gestion del cambio de musica
+let first = false, second = false, third = false, fourth = false;
 
 //EventListeners
-// Slider();
 eventListeners();
 
 
 function eventListeners(){
 
+    // verificacionBtnReproductor();
+
+    switch (contador) {
+        case 1:
+            reproductor = document.querySelector('.primero');
+        break;
+    
+        case 2:
+            reproductor = document.querySelector('.second');
+        break;
+
+        // case 3:
+        // reproductor = document.querySelector('.primero');
+        // break;
+        default:
+            break;
+    }
+
+    // verificacionBtnSlider();
+
     reproductor.addEventListener('click', reproducirMusica);
 }
 
 //Funciones
+function verificacionBtnReproductor(){
+
+    musica.forEach( music => {
+
+        console.log(music.classList[2]);
+
+        // if(){
+
+        // }
+        if(music.classList[2] === 'primero' && !first && contador === 1){
+
+            audio.src = 'assets/music/Yonaguni.mp3';
+            first = true;
+            second = false;
+            console.log(contador);
+            // reproductor = 
+        } 
+        
+        if(music.classList[2] === 'second' && !second && contador === 2 )
+        {
+            audio.src = 'assets/music/Heart Of Glass - Miley Cyrus.mp3';
+            second = true;
+            first = false;
+            
+            console.log(contador);
+        }
+    });
+}
+
 function Slider() {
     
     slideImg = document.querySelector('.first');
@@ -26,8 +79,6 @@ function Slider() {
     if(audio.paused){
 
         // contador = contador + 1;
-        console.log(audio.paused);
-        console.log(slideImg.style.width);
 
         setInterval(function(){
                 
@@ -49,33 +100,30 @@ function Slider() {
                 
         }, 5000);
 
-    }
-    else
-    {
-        // contador = contador - 1;
-        console.log(audio.paused);
-        console.log(contador);
-    }
-    
+    }    
 }
 
 // Reproducir musica
 function reproducirMusica(){
 
+    
+
     //Se define el audio a reproducir
     audio = reproductor.parentElement.children[2];
 
+    
+    
     //Se muestra por consola cual audio es
-    console.log(reproductor.parentElement.children);
+    // console.log(reproductor.parentElement.children);
 
     //Si el audio esta conectado
     if(audio.isConnected){
+
         
         //Si el audio esta pausado, se empieza a reproducir
-        if(audio.paused){
+        if(audio.paused){   
 
-            console.log(`¿El audio esta pausado?: ${audio.paused}`);
-
+            verificacionBtnReproductor();
             audio.play();
 
             reproduciendoMusica = true;

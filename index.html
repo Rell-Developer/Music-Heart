@@ -45,10 +45,10 @@
         <div class = 'slider'>
             <div class="slides">
                 <!-- radio buttons start -->
-                <input type="radio" name="radio-btn" id="radio1">
-                <input type="radio" name="radio-btn" id="radio2">
-                <input type="radio" name="radio-btn" id="radio3">
-                <input type="radio" name="radio-btn" id="radio4">
+                <input type="radio" name="radio-btn" id="radio1" class="radio-btns">
+                <input type="radio" name="radio-btn" id="radio2" class="radio-btns">
+                <input type="radio" name="radio-btn" id="radio3" class="radio-btns">
+                <input type="radio" name="radio-btn" id="radio4" class="radio-btns">
                 <!-- radio buttons end -->
 
                 <!-- slide image start -->
@@ -57,12 +57,10 @@
                         <p>Disfruta de las canciones del dia de hoy con la mejor calidad y a un buen precio.</p>
 
                         <!-- Reproductor de audio -->
-                        <!-- <img src="assets/img/boton.png" class="audio-right reproductor"> -->
-                        <div class = "audio-right reproductor"></div>
-                        <audio src="assets/music/Yonaguni.mp3" preload="none"></audio>
+                        <div class = "audio-right reproductor primero"></div>
+                        <audio preload="none"></audio>
 
                         <!-- Barras de volumen -->
-                        <!-- <div class="volume-bar"></div> -->
                         <div id="mp3_player" class="volume-bar">
                             <canvas id="analyzer_render"></canvas>
                             <div id="audio_box"></div>
@@ -76,15 +74,22 @@
                         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus, ea!</p>
                     
                         <!-- Reproductor de audio -->
-                        <div class = "audio-right reproductor"></div>
-                        <audio src="assets/music/Caballo Homosexual De Las Montañas  LETRA.mp3"></audio>
+                        <div class = "audio-right reproductor second" id="second"></div>
+                        <audio src="assets/music/Heart Of Glass - Miley Cyrus.mp3" preload="none"></audio>
+
+                        <!-- Barras de volumen -->
+                        <div id="mp3_player" class="volume-bar">
+                            <canvas id="analyzer_render"></canvas>
+                            <div id="audio_box"></div>
+                        </div>
                     </div>
-                    <img src="assets/img/slider/2.jpg" alt="">
+
+                    <img src="assets/img/slider/miley 4.png" alt="">
                 </div>
-                <div class="slide">
+                <div class="slide third">
                     <img src="assets/img/slider/3.jpg" alt="">
                 </div>
-                <div class="slide">
+                <div class="slide fourth">
                     <img src="assets/img/slider/4.jpg" alt="">
                 </div>
                 <!-- slide image end -->
