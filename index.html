@@ -45,24 +45,39 @@
         <div class = 'slider'>
             <div class="slides">
                 <!-- radio buttons start -->
-                <input type="radio" name="radio-btn" id="radio1" class="radio-btns">
-                <input type="radio" name="radio-btn" id="radio2" class="radio-btns">
-                <input type="radio" name="radio-btn" id="radio3" class="radio-btns">
-                <input type="radio" name="radio-btn" id="radio4" class="radio-btns">
+                <!-- <input type="radio" name="radio-btn" id="radio1" class="radio-btns">
+                <input type="radio" name="radio-btn" id="radio2" class="radio-btns"> -->
+                <!-- <input type="radio" name="radio-btn" id="radio3" class="radio-btns">
+                <input type="radio" name="radio-btn" id="radio4" class="radio-btns"> -->
                 <!-- radio buttons end -->
 
+                <!-- Div Navegation -->
+
+                <div class="flechas">
+
+                    <div class="flechaIzquierda">
+                        <div class="flecha"></div>
+                    </div>
+
+                    <div class="flechaDerecha">
+                        <div class="flecha"></div>
+                    </div>
+
+                </div>
+
+                <!-- Fin de Div Navegation -->
                 <!-- slide image start -->
                 <div class="slide first">
                     <div class="description-slide">
                         <p>Disfruta de las canciones del dia de hoy con la mejor calidad y a un buen precio.</p>
 
                         <!-- Reproductor de audio -->
-                        <div class = "audio-right reproductor primero"></div>
-                        <audio preload="none"></audio>
+                        <div class = "audio-right reproductor primero" id="primero"></div>
+                        <audio preload="none" src="assets/music/Yonaguni.mp3"></audio>
 
                         <!-- Barras de volumen -->
                         <div id="mp3_player" class="volume-bar">
-                            <canvas id="analyzer_render"></canvas>
+                            <canvas id="analyzer_render" class="barFirst"></canvas>
                             <div id="audio_box"></div>
                         </div>
                     </div>
@@ -79,36 +94,66 @@
 
                         <!-- Barras de volumen -->
                         <div id="mp3_player" class="volume-bar">
-                            <canvas id="analyzer_render"></canvas>
+                            <canvas id="analyzer_render" class="barSecond"></canvas>
                             <div id="audio_box"></div>
                         </div>
                     </div>
 
                     <img src="assets/img/slider/miley 4.png" alt="">
                 </div>
-                <div class="slide third">
+                <div class="slide">
+
+                    <div class="description-slide">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus, ea!</p>
+                    
+                        <!-- Reproductor de audio -->
+                        <div class = "audio-right reproductor third" id="third"></div>
+                        <audio src="assets/music/Bohemian Rhapsody  Queen Lyrics .mp3" preload="none"></audio>
+
+                        <!-- Barras de volumen -->
+                        <div id="mp3_player" class="volume-bar">
+                            <canvas id="analyzer_render" class="barThird"></canvas>
+                            <div id="audio_box"></div>
+                        </div>
+                    </div>
+
                     <img src="assets/img/slider/3.jpg" alt="">
                 </div>
-                <div class="slide fourth">
-                    <img src="assets/img/slider/4.jpg" alt="">
+                <div class="slide">
+
+                    <div class="description-slide">
+                        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ducimus, ea!</p>
+                    
+                        <!-- Reproductor de audio -->
+                        <div class = "audio-right reproductor fourth" id="fourth"></div>
+                        <audio src="assets/music/Ericson Escalona  Alma Llanera Orquestal Metal Versión.mp3" preload="none"></audio>
+
+                        <!-- Barras de volumen -->
+                        <div id="mp3_player" class="volume-bar">
+                            <canvas id="analyzer_render" class="barFourth"></canvas>
+                            <div id="audio_box"></div>
+                        </div>
+                    </div>
+
+                    <img src="assets/img/slider/4.png" alt="">
                 </div>
                 <!-- slide image end -->
                 <!-- comienzo de la navegacion automatica -->
-                <div class="navegation-auto">
+                <!-- <div class="navegation-auto">
                     <div class="auto-btn1"></div>
                     <div class="auto-btn2"></div>
                     <div class="auto-btn3"></div>
                     <div class="auto-btn4"></div>
-                </div>
+                </div> -->
                 <!-- fin de la navegacion automatica -->
             </div>
 
             <!-- comienzo de la navegacion manual -->
             <div class="navegation-manual">
-                <label for="radio1" class="manual-btn"></label>
-                <label for="radio2" class="manual-btn"></label>
-                <label for="radio3" class="manual-btn"></label>
-                <label for="radio4" class="manual-btn"></label>
+                <!-- <label for="radio1" class="manual-btn"></label>
+                <label for="radio2" class="manual-btn"></label> -->
+                <!-- <label for="radio3" class="manual-btn"></label>
+                <label for="radio4" class="manual-btn"></label> -->
             </div>
             <!-- fin del la navegacion manual -->
         </div>

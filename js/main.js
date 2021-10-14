@@ -1,120 +1,184 @@
 //Variables
-let reproductor;
+// let reproductor;
+
+const reproductor1 = document.querySelector('.primero');
+const reproductor2 = document.querySelector('.second');
+const reproductor3 = document.querySelector('.third');
+const reproductor4 = document.querySelector('.fourth');
+
 const musica = document.querySelectorAll('.reproductor');
+const flechaDerecha = document.querySelector('.flechaDerecha');
+const flechaIzquierda = document.querySelector('.flechaIzquierda');
 // let btns = document.querySelectorAll('.radio-btns');
 
 let reproduciendoMusica = false;
 let slideImg; //Imagen del slider
-let audio; //La musica a reproducir
+let audio, audioAnterior; //La musica a reproducir y la musica anterior para bajar el volumen
 
 let contador = 1;
+let espaciado = 0; //Espaciado que nos ayudara en el movimiento del slide
 
 //Booleanos para la gestion del cambio de musica
 let first = false, second = false, third = false, fourth = false;
 
 //EventListeners
-eventListeners();
 
 
 function eventListeners(){
 
     // verificacionBtnReproductor();
 
-    switch (contador) {
-        case 1:
-            reproductor = document.querySelector('.primero');
-        break;
+    // switch (contador) {
+    //     case 1:
+    //         reproductor = document.querySelector('.primero');
+    //     break;
     
-        case 2:
-            reproductor = document.querySelector('.second');
-        break;
+    //     case 2:
+    //         reproductor = document.querySelector('.second');
+    //     break;
 
-        // case 3:
-        // reproductor = document.querySelector('.primero');
-        // break;
-        default:
-            break;
-    }
+    //     // case 3:
+    //     // reproductor = document.querySelector('.primero');
+    //     // break;
+    //     default:
+    //         break;
+    // }
 
     // verificacionBtnSlider();
 
-    reproductor.addEventListener('click', reproducirMusica);
+    // Accion de los reproductores
+    reproductor1.addEventListener('click', () => reproducirMusica(reproductor1, '.barFirst'));
+    reproductor2.addEventListener('click', () => reproducirMusica(reproductor2, '.barSecond'));
+    reproductor3.addEventListener('click', () => reproducirMusica(reproductor3, '.barThird'));
+    reproductor4.addEventListener('click', () => reproducirMusica(reproductor4, '.barFourth'));
+
+
+    //Acciones de las flechas
+    flechaDerecha.addEventListener('click', () =>   movimientoSlide(true));
+    flechaIzquierda.addEventListener('click', () => movimientoSlide(false));
+
+
+    
 }
 
 //Funciones
-function verificacionBtnReproductor(){
+function movimientoSlide(derecha){
 
-    musica.forEach( music => {
-
-        console.log(music.classList[2]);
-
-        // if(){
-
-        // }
-        if(music.classList[2] === 'primero' && !first && contador === 1){
-
-            audio.src = 'assets/music/Yonaguni.mp3';
-            first = true;
-            second = false;
-            console.log(contador);
-            // reproductor = 
-        } 
-        
-        if(music.classList[2] === 'second' && !second && contador === 2 )
-        {
-            audio.src = 'assets/music/Heart Of Glass - Miley Cyrus.mp3';
-            second = true;
-            first = false;
-            
-            console.log(contador);
-        }
-    });
-}
-
-function Slider() {
-    
+    //Declarando
     slideImg = document.querySelector('.first');
-    
-    //Intervalo de tiempo para el movimiento del slider
-    if(audio.paused){
 
-        // contador = contador + 1;
-
-        setInterval(function(){
-                
-                if(audio.paused){
-
-                    document.getElementById(`radio${contador}`).checked = true;
-                    
-                    contador++;
-
-                    if(contador > 4){
-                        contador = 1;
-                    }
-                }
-                else{
-                    // console.log('slider fijo');
-                    slideImg.style.width = '-60%';
-                    return;
-                }
-                
-        }, 5000);
-
-    }    
+    //Comparacion y movimiento
+    derecha === true ? desplazamiento(-20) : desplazamiento(20);
 }
+
+    function desplazamiento(numero) {
+
+        //Asignando un nuevo valor a espaciado
+        espaciado = espaciado + (numero);
+
+        if(espaciado === -80){  espaciado = 0;  }
+
+        if(espaciado === 20){    espaciado = -60;   }
+
+        //movimiento del slider
+        slideImg.style.margin = `0 0 0 ${espaciado}%`;
+    }
+
+// function verificacionBtnReproductor(){
+
+//     // musica.forEach( music => {
+
+//     //     console.log(music.classList[2]);
+
+//     //     // if(){
+
+//     //     // }
+//     //     if(music.classList[2] === 'primero' && !first){
+
+//     //         audio.src = 'assets/music/Yonaguni.mp3';
+//     //         first = true;
+//     //         second = false;
+//     //         // console.log(contador);
+//     //         // reproductor = 
+//     //     } 
+        
+//     //     if(music.classList[2] === 'second' && !second && contador === 2 )
+//     //     {
+//     //         audio.src = 'assets/music/Heart Of Glass - Miley Cyrus.mp3';
+//     //         second = true;
+//     //         first = false;
+            
+//     //         console.log(contador);
+//     //     }
+//     // });
+// }
+
+// function Slider() {
+    
+//     // slideImg = document.querySelector('.first');
+//     // setInterval(() => {
+
+//     //     console.log('entrando');
+//     //     slideImg.style.transform = `scale(${1 * -1})`;
+//     // }, 5000);
+
+//     //Intervalo de tiempo para el movimiento del slider
+//     // if(audio.paused){
+
+//     //     // contador = contador + 1;
+
+//     //     setInterval(function(){
+                
+//     //             if(audio.paused){
+
+//     //                 // document.getElementById(`radio${contador}`).checked = true;
+                    
+//     //                 contador++;
+
+//     //                 if(contador > 4){
+//     //                     contador = 1;
+//     //                 }
+//     //             }
+//     //             else{
+//     //                 // console.log('slider fijo');
+//     //                 slideImg.style.width = '-60%';
+//     //                 return;
+//     //             }
+                
+//     //     }, 5000);
+
+//     // }    
+// }
 
 // Reproducir musica
-function reproducirMusica(){
 
-    
+function reproducirMusica(reproductor, canva){
+
+
+    // console.log(reproductor);
+    //Se verifica si alguna otra musica no se esta reproduciendo, si es asi, se le baja volumen
+    let musicaCambiada;
 
     //Se define el audio a reproducir
     audio = reproductor.parentElement.children[2];
 
-    
-    
-    //Se muestra por consola cual audio es
-    // console.log(reproductor.parentElement.children);
+    //Se verifica si alguna otra musica no se esta reproduciendo, si es asi, se le baja volumen
+    if(audio !== undefined && audio !== audioAnterior){ 
+        
+        musicaCambiada = true; 
+    } 
+    else if(audio === audioAnterior)
+    {
+        musicaCambiada = false;
+    }
+
+
+    if(musicaCambiada && audioAnterior !== undefined){
+        controlVolumen(false, audioAnterior);
+    }
+
+    //Se define el audio para respaldo
+    audioAnterior = reproductor.parentElement.children[2];
 
     //Si el audio esta conectado
     if(audio.isConnected){
@@ -123,12 +187,13 @@ function reproducirMusica(){
         //Si el audio esta pausado, se empieza a reproducir
         if(audio.paused){   
 
-            verificacionBtnReproductor();
+            // verificacionBtnReproductor();
             audio.play();
 
+            console.log(audio);
             reproduciendoMusica = true;
             //Pausando animacion del slider
-            Slider();
+            // Slider();
 
             //Si ya se ha reproducido, continua, sino, si es primera vez, empieza en una definida
             if(audio.currentTime > 20.61){
@@ -141,14 +206,11 @@ function reproducirMusica(){
             //Volumen por defecto
             audio.volume = 0.02;
 
-            //Imagen del slider
-            // slideImg = audio.parentElement.nextElementSibling;
-            // console.log(slideImg);
-            // animacionImg();
-            initMp3Player();
+            //Barras de musica
+            initMp3Player(canva);
 
             //Se sube el volumen al comenzar
-            controlVolumen(true); //Enviando al control de volumen que se esta reproduciendo la musica
+            controlVolumen(true, audio); //Enviando al control de volumen que se esta reproduciendo la musica
         }
         else
         {
@@ -156,56 +218,69 @@ function reproducirMusica(){
             reproduciendoMusica = false;
 
             //Se baja el volumen al pausar
-            controlVolumen(false);
-            Slider();
+            controlVolumen(false, audio);
+            // Slider();
         }
     }
 }
 
 //Funcion para el control del volumen
-function controlVolumen(play){
+function controlVolumen(play, musica){
 
     //Si la musica esta pausada
     if(play){
 
         //se sube el volumen
         do {
-            audio.volume += 0.001;
-        } while (audio.volume < 0.3);
+            musica.volume += 0.0007;
+        } while (musica.volume < 0.3);
     }
     else //Se baja el volumen
     {
         do {
             
-            audio.volume -= 0.001;
+            musica.volume -= 0.0007;
 
-        } while (audio.volume > 0.02);
+        } while (musica.volume > 0.02);
 
-        audio.pause(); //Se pausa
+        musica.pause(); //Se pausa
     }    
 }
+
+
 
 //Animacion del slide
 
 let canvas, ctx, source, context, analyser, fbc_array, bars, bar_x, bar_width, bar_height;
 
-function initMp3Player(){
+function initMp3Player(canva){
 
+    console.log(canva);
     // let audio_box = audio;
     
     // document.getElementById('audio_box').appendChild(audio_box);
 
     if(context === undefined){
+
+        //
+        analyser = undefined;
+        canvas = undefined;
+        ctx = undefined;
+        source = undefined;
+
         context = new AudioContext();
         analyser = context.createAnalyser();
 
-        canvas = document.getElementById('analyzer_render');
+        canvas = document.querySelector(canva);
 
         ctx = canvas.getContext('2d');
 
         source = context.createMediaElementSource(audio);
         source.connect(analyser);
         analyser.connect(context.destination);
+
+        // fbc_array = undefined;
+
         frameLooper();
     }
     else
@@ -216,6 +291,9 @@ function initMp3Player(){
 }
 
 function frameLooper(){
+
+    fbc_array = undefined;
+
     window.requestAnimationFrame(frameLooper);
 
     fbc_array = new Uint8Array(analyser.frequencyBinCount);
@@ -234,3 +312,6 @@ function frameLooper(){
         ctx.fillRect(bar_x, canvas.height, bar_width, bar_height);
     }
 }
+
+
+eventListeners();
