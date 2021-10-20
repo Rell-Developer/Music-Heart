@@ -165,7 +165,14 @@ function reproducirMusica(reproductor, canva){
     //Se verifica si alguna otra musica no se esta reproduciendo, si es asi, se le baja volumen
     if(audio !== undefined && audio !== audioAnterior){ 
         
-        musicaCambiada = true; 
+        musicaCambiada = true;
+        
+        if(context !== undefined){
+            
+            context.close();
+            context = undefined;
+        }
+        
     } 
     else if(audio === audioAnterior)
     {
@@ -219,6 +226,8 @@ function reproducirMusica(reproductor, canva){
 
             //Se baja el volumen al pausar
             controlVolumen(false, audio);
+
+            // initMp3Player(canva);
             // Slider();
         }
     }
@@ -239,7 +248,7 @@ function controlVolumen(play, musica){
     {
         do {
             
-            musica.volume -= 0.0007;
+            musica.volume -= 0.00005;
 
         } while (musica.volume > 0.02);
 
@@ -251,32 +260,72 @@ function controlVolumen(play, musica){
 
 //Animacion del slide
 
-let canvas, ctx, source, context, analyser, fbc_array, bars, bar_x, bar_width, bar_height;
+let canvas, pastCanvas, ctx, source, context, analyser, fbc_array, bars, bar_x, bar_width, bar_height, pastSource;
 
 function initMp3Player(canva){
 
-    console.log(canva);
+    // if(!audio.paused){
+    //     context = undefined;
+    // }
+
+    // context = undefined;
+    
     // let audio_box = audio;
     
     // document.getElementById('audio_box').appendChild(audio_box);
 
-    if(context === undefined){
+    if(context === undefined && !audio.paused){
 
         //
         analyser = undefined;
         canvas = undefined;
         ctx = undefined;
-        source = undefined;
+        
 
         context = new AudioContext();
         analyser = context.createAnalyser();
 
         canvas = document.querySelector(canva);
 
+        if(canvas !== pastCanvas){
+
+            // console.log('Canva actual');
+            // console.log(canvas);
+            // console.log('');
+            // console.log('Canva anterior');
+            // console.log(pastCanvas);
+
+            source = undefined;
+
+            pastCanvas = canvas;
+
+            // console.log('Nuevo valor de Canva anterior');
+            // console.log(pastCanvas);
+
+            source = context.createMediaElementSource(audio);
+
+            source.connect(analyser);
+            console.log(context);
+        }
+        else{
+
+            // source.close;
+            // if(source !== undefined){
+                
+            // }
+        }
+
         ctx = canvas.getContext('2d');
 
-        source = context.createMediaElementSource(audio);
-        source.connect(analyser);
+        // if(pastCanvas !== canvas){
+        //     source = context.createMediaElementSource(audio);
+        // }
+        // else{
+
+        // }
+
+        pastSource = source;
+
         analyser.connect(context.destination);
 
         // fbc_array = undefined;
@@ -287,10 +336,11 @@ function initMp3Player(canva){
     {
         frameLooper();
     }
-    
 }
 
 function frameLooper(){
+
+    // context.AudioContext
 
     fbc_array = undefined;
 
@@ -300,17 +350,21 @@ function frameLooper(){
 
     analyser.getByteFrequencyData(fbc_array);
 
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    ctx.fillStyle = "#FFE6E6";
-    bars = 100;
+    if(ctx !== undefined){
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = "#FFE6E6";
+        
+        bars = 100;
 
-    //Altura y anchura de las barras
-    for(var i = 0; i < bars; i++){
-        bar_x = i * 3;
-        bar_width = 2;
-        bar_height = -(fbc_array[i] / 1.6);
-        ctx.fillRect(bar_x, canvas.height, bar_width, bar_height);
+        //Altura y anchura de las barras
+        for(var i = 0; i < bars; i++){
+            bar_x = i * 3;
+            bar_width = 2;
+            bar_height = -(fbc_array[i] / 1.6);
+            ctx.fillRect(bar_x, canvas.height, bar_width, bar_height);
+        }
     }
+    
 }
 
 
