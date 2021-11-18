@@ -313,7 +313,7 @@ div#mp3_player > canvas {
 .information1{
 
     width: 60%;
-    height: 500px;
+    height: 250px;
     /* background-color: blue; */
     margin: 160px 20px 0px 20px;
     display: flexbox;
@@ -345,7 +345,7 @@ div#mp3_player > canvas {
 
 .float-icons{
     width: 100%;
-    height: 70%;
+    height: 100%;
     display: inline-flex;
     justify-items: column;
 }
@@ -354,7 +354,7 @@ div#mp3_player > canvas {
 .s-i{
     /* Tamaño y separacion */
     width: 7%;
-    height: 8%;
+    height: 10%;
     margin-right: 30%;
 }
 
@@ -386,12 +386,13 @@ div#mp3_player > canvas {
 .funciones-info{
     /* Tamaño */
     width: 100%;
-    height: 520px;
+    height: 800px;
 
     /* Fondo */
-    background: #f01c1c;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to bottom, #f01c1c 80%, #0a0a0a);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to bottom, #f01c1c 82%, #0a0a0a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    padding-top: 10px;
+    background: #be1212;  /* fallback for old browsers */
+    /* background: -webkit-linear-gradient(to bottom, #f01c1c 80%, #0a0a0a);  Chrome 10-25, Safari 5.1-6 */
+    /* background: linear-gradient(to bottom, #f01c1c 82%, #0a0a0a); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
 }
 
@@ -402,8 +403,6 @@ div#mp3_player > canvas {
     font-size: 40px;
     display: flex;
     justify-content: center;
-
-    margin-top: 0%;
 }
 
 /* Tarjetas de informacion */
@@ -418,18 +417,16 @@ div#mp3_player > canvas {
 
     /* Tamaño */
     width: 30%;
-    /* height: 355px; */
-    height: 440px;
+    height: 400px;
     border-radius: 5%;
 
     /* Posicion */
     text-align: center;
     justify-items: center;
+    margin-bottom: 5%;
 
     /* Color */
-    background: #f01c1c;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to bottom, #e61b1b 70%, #0a0a0a); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to bottom, #db1919 70%, #0a0a0a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #ff1d1d; 
 
 }
 
@@ -464,17 +461,116 @@ div#mp3_player > canvas {
 /*---------------- Footer ----------------*/
 footer{
     width: 100%;
-    height: 300px;
+    height: 370px;
     background-color: rgb(8, 8, 8);
+    /* display: flex;
+    justify-content: space-evenly; */
+    /* background-color: #fff; */
+}
+
+.content-footer{
+    display:flex;
+    justify-content: space-evenly;
+}
+
+.enlace-logo{
+    width:20%;
+    height: 10px;
+
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-top:0;
+    /* background: green; */
 }
 
 .logo-footer img{
-    width: 5%;
-    height: 10%;
+    width: 20%;
+    height: 11%;
 
-    margin: 7% 2% 0% 2%;
+    padding-top: 0;
+    margin: 10% 4% 0% 4%;
 }
 
 .logo-footer{
+    width: 100%;
+    display: flex;
+
+    margin-right: 5px;
+    margin-bottom: 0px;
+    padding-bottom: 0;
+    /* background: yellow; */
+}
+
+.logo-footer p{
+
+    width: 100%;
+    font-size: 22px;
+    color: #FFE6E6;
+    text-align: left;
+    text-decoration: none;
+
+    /* background: red; */
+    margin-top: 22px;
+    margin-bottom: 0;
+    padding: 2px 5px 0px 3px;
+
+    transition: .2s ease-in-out;
+}
+
+footer div:not(:first-child){
+    width: 18%;
     /* background-color: green; */
+}
+
+.empresa p, .comunidades p, .enlaces p, .redes-sociales p{
+    width: 68%;
+    padding: 0;
+    margin: 0;
+
+    margin-top: 6%;
+    color:#ffe6e6;
+    transition: .2s ease-in-out;
+    /* background-color: red; */
+}
+
+.empresa p:hover, .enlaces p:hover{
+
+    color:#ffffff;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.comunidades p:hover, .redes-sociales p:hover{
+
+    color: #FF2626;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.empresa, .comunidades, .enlaces, .redes-sociales{
+    margin-top: 2%;
+}
+
+footer div{
+    margin-top: 0%;
+}
+
+footer .copyr{
+    
+    width: 50%;
+    height: 15%;
+    /* background: green; */
+}
+
+.copyr p{
+    width: 100%;
+    padding-left:0;
+
+    /* background:red; */
+}
+
+.enlace-logo p:hover{
+    color: #FF2626;
+    cursor: pointer;
+    /* font-size: 18px; */
 }
