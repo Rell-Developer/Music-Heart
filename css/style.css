@@ -305,7 +305,7 @@ div#mp3_player > canvas {
 /*---------------- Information ----------------*/
 .information{
     width: 100%;
-    height: 700px;
+    height: 520px;
     background-color: #FF2626;
     display: flex;
 }
@@ -322,14 +322,15 @@ div#mp3_player > canvas {
 .information1 p{
 
     width: 50%;
-    margin: 80px 40px;
+    margin: 80px 0px;
     font-size: 28px;
     position:absolute;
 }
 
-.information img{
-    width: 450px;
-    height: 450px;
+.information .girl{
+    /* Tamaño */
+    width: 35%;
+    height: 50%;
 
     /* Bordes */
     border-top-left-radius: 80%;
@@ -337,54 +338,143 @@ div#mp3_player > canvas {
     border-bottom-right-radius: 80%;
     border-bottom-left-radius: 30%;
 
-    margin: 50px;
-    margin-top: 150px;
+    margin: 150px 0px 50px 50px;
     background-color: #FFE6E6;
     z-index: 3;
 }
 
-.burbujas{
-    width: 50px;
-    height: 50px;
-    background-color: #BD1616 ;
-    border-radius: 50%;
-    display: inline-block;
-    border: 3px solid #cf2020;
+.float-icons{
+    width: 100%;
+    height: 70%;
+    display: inline-flex;
+    justify-items: column;
 }
 
-.primer{
-    margin-left: 77px;
-    margin-right: 190px;
-    margin-top: 10px;
-    /* z-index: 1; */
-    /* background-color: brown; */
+/* s-i significa Sound-Icon */
+.s-i{
+    /* Tamaño y separacion */
+    width: 7%;
+    height: 8%;
+    margin-right: 30%;
 }
 
-.segundo{
-    margin-left: 147px;
-    margin-right: 110px;
-    margin-top: 20px;
-    /* background: chartreuse; */
-    /* z-index: 2; */
+.sound-icon-1{
+
+    /* Posicion y rotacion */
+    transform: rotate(-25deg);
+    margin: 10% 30% 0 5%;
 }
 
-.tercer{
-    margin-left: 247px;
-    margin-right: 100px;
-    margin-top: 10px;
-    /* z-index: 3; */
+.sound-icon-2{
+
+    /* Posicion y rotacion */
+    margin-top: 38%;
+    transform: rotate(25deg);
 }
-/* 
-.information1 p b{
-    color:black;
-} */
 
+.info-reproductor{
+    
+    /* Posicion y rotacion */
+    transform: rotate(30deg);
+    width: 20%;
+    height: 25%;
+    margin: 4% 4% 0 auto;
+}
 
+/*---------------- Informacion de Algunas Funciones ----------------*/
+
+.funciones-info{
+    /* Tamaño */
+    width: 100%;
+    height: 520px;
+
+    /* Fondo */
+    background: #f01c1c;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #f01c1c 80%, #0a0a0a);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #f01c1c 82%, #0a0a0a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.funciones-info h2{
+
+    /* Tamaño y Posicion */
+    color:rgb(255, 240, 240);
+    font-size: 40px;
+    display: flex;
+    justify-content: center;
+
+    margin-top: 0%;
+}
+
+/* Tarjetas de informacion */
+
+.funciones{
+    margin-top: 5%;
+    display:flex;
+    justify-content: space-evenly;
+}
+
+.card{
+
+    /* Tamaño */
+    width: 30%;
+    /* height: 355px; */
+    height: 440px;
+    border-radius: 5%;
+
+    /* Posicion */
+    text-align: center;
+    justify-items: center;
+
+    /* Color */
+    background: #f01c1c;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to bottom, #e61b1b 70%, #0a0a0a); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to bottom, #db1919 70%, #0a0a0a); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+
+.description{
+    width: 100%;
+    height: 100%;
+}
+
+.description h3{
+    color:rgb(255, 230, 230);
+    font-size: 30px;
+
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.description p{
+    width: 80%;
+}
+
+.card img{
+    
+    background-color: #FFE6E6;
+    padding: 10px 10px 0px 10px;
+
+    border-radius: 5%;
+    margin-top: 8%;
+    margin-bottom: 8%;
+}
 
 
 /*---------------- Footer ----------------*/
 footer{
     width: 100%;
     height: 300px;
-    background-color: rgb(10, 10, 10);
+    background-color: rgb(8, 8, 8);
+}
+
+.logo-footer img{
+    width: 5%;
+    height: 10%;
+
+    margin: 7% 2% 0% 2%;
+}
+
+.logo-footer{
+    /* background-color: green; */
 }

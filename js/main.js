@@ -305,7 +305,7 @@ function initMp3Player(canva){
             source = context.createMediaElementSource(audio);
 
             source.connect(analyser);
-            console.log(context);
+            // console.log(context);
         }
         else{
 
