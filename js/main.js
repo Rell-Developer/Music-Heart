@@ -199,16 +199,6 @@ function reproducirMusica(reproductor, canva){
 
             console.log(audio);
             reproduciendoMusica = true;
-            //Pausando animacion del slider
-            // Slider();
-
-            //Si ya se ha reproducido, continua, sino, si es primera vez, empieza en una definida
-            if(audio.currentTime > 20.61){
-                audio.currentTime= audio.currentTime;
-            }
-            else{
-                audio.currentTime = 20.61;
-            }
             
             //Volumen por defecto
             audio.volume = 0.02;
@@ -218,6 +208,13 @@ function reproducirMusica(reproductor, canva){
 
             //Se sube el volumen al comenzar
             controlVolumen(true, audio); //Enviando al control de volumen que se esta reproduciendo la musica
+    
+            // Bajar volumen cuando se este llegando al final
+            setTimeout(() => {          
+                
+                //Se baja el volumen
+                controlVolumen(false, audio);
+            }, 58000);
         }
         else
         {
@@ -231,6 +228,8 @@ function reproducirMusica(reproductor, canva){
             // Slider();
         }
     }
+    
+    
 }
 
 //Funcion para el control del volumen

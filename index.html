@@ -21,10 +21,13 @@
     <link rel="icon" type="image/png" sizes="96x96" href="/assets/img/icons/Favicon de Music Heart/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/icons/Favicon de Music Heart/favicon-16x16.png">
     <link rel="manifest" href="/assets/img/icons/Favicon de Music Heart/manifest.json">
+
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
+
     <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <title>Music Heart</title>
 </head>
 <body>
@@ -44,12 +47,6 @@
         <!-- image slider start -->
         <div class = 'slider'>
             <div class="slides">
-                <!-- radio buttons start -->
-                <!-- <input type="radio" name="radio-btn" id="radio1" class="radio-btns">
-                <input type="radio" name="radio-btn" id="radio2" class="radio-btns"> -->
-                <!-- <input type="radio" name="radio-btn" id="radio3" class="radio-btns">
-                <input type="radio" name="radio-btn" id="radio4" class="radio-btns"> -->
-                <!-- radio buttons end -->
 
                 <!-- Div Navegation -->
 
@@ -73,7 +70,7 @@
 
                         <!-- Reproductor de audio -->
                         <div class = "audio-right reproductor primero" id="primero"></div>
-                        <audio preload="none" src="assets/music/Yonaguni.mp3"></audio>
+                        <audio preload="none" src="assets/music/Yonaguni recortado.mp3"></audio>
 
                         <!-- Barras de volumen -->
                         <div id="mp3_player" class="volume-bar">
@@ -82,7 +79,7 @@
                         </div>
                     </div>
                     
-                    <img src="assets/img/slider/1.jpg">
+                    <img src="assets/img/slider/1.png">
                 </div>
                 <div class="slide">
                     <div class="description-slide">
@@ -90,7 +87,7 @@
                     
                         <!-- Reproductor de audio -->
                         <div class = "audio-right reproductor second" id="second"></div>
-                        <audio src="assets/music/Heart Of Glass - Miley Cyrus.mp3" preload="none"></audio>
+                        <audio src="assets/music/Heart Of Glass - Miley Cyrus recortado.mp3" preload="none"></audio>
 
                         <!-- Barras de volumen -->
                         <div id="mp3_player" class="volume-bar">
@@ -108,7 +105,7 @@
                     
                         <!-- Reproductor de audio -->
                         <div class = "audio-right reproductor third" id="third"></div>
-                        <audio src="assets/music/Bohemian Rhapsody  Queen Lyrics .mp3" preload="none"></audio>
+                        <audio src="assets/music/Bohemian Rhapsody - Queen recortado.mp3" preload="none"></audio>
 
                         <!-- Barras de volumen -->
                         <div id="mp3_player" class="volume-bar">
@@ -126,7 +123,7 @@
                     
                         <!-- Reproductor de audio -->
                         <div class = "audio-right reproductor fourth" id="fourth"></div>
-                        <audio src="assets/music/Ericson Escalona  Alma Llanera Orquestal Metal Versión.mp3" preload="none"></audio>
+                        <audio src="assets/music/Ericson Escalona  Alma Llanera Orquestal Metal Versión recortado.mp3" preload="none"></audio>
 
                         <!-- Barras de volumen -->
                         <div id="mp3_player" class="volume-bar">
@@ -137,25 +134,7 @@
 
                     <img src="assets/img/slider/4.png" alt="">
                 </div>
-                <!-- slide image end -->
-                <!-- comienzo de la navegacion automatica -->
-                <!-- <div class="navegation-auto">
-                    <div class="auto-btn1"></div>
-                    <div class="auto-btn2"></div>
-                    <div class="auto-btn3"></div>
-                    <div class="auto-btn4"></div>
-                </div> -->
-                <!-- fin de la navegacion automatica -->
             </div>
-
-            <!-- comienzo de la navegacion manual -->
-            <div class="navegation-manual">
-                <!-- <label for="radio1" class="manual-btn"></label>
-                <label for="radio2" class="manual-btn"></label> -->
-                <!-- <label for="radio3" class="manual-btn"></label>
-                <label for="radio4" class="manual-btn"></label> -->
-            </div>
-            <!-- fin del la navegacion manual -->
         </div>
         <!-- image slider end-->
     </section>
@@ -232,7 +211,7 @@
         </div>
 
         <!-- Wave para presentar el footer -->
-        <div style="margin-top:10px; height: 10px;"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#080808" fill-opacity="1" d="M0,32L60,48C120,64,240,96,360,128C480,160,600,192,720,176C840,160,960,96,1080,69.3C1200,43,1320,53,1380,58.7L1440,64L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg></div>
+        <div style="margin-top:10px; height: 10px;" class="wave-footer"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#080808" fill-opacity="1" d="M0,32L60,48C120,64,240,96,360,128C480,160,600,192,720,176C840,160,960,96,1080,69.3C1200,43,1320,53,1380,58.7L1440,64L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path></svg></div>
         
     </section>
 
@@ -247,14 +226,14 @@
             </a>
 
             <div class="empresa">
-                <p style="font-size:17px"><b>EMPRESA</b></p>
+                <p><b>EMPRESA</b></p>
                 <p>Acerca de</p>
                 <p>Empleo</p>
                 <p>Music Heart Awards</p>
             </div>
 
             <div class="comunidades">
-                <p style="font-size:17px"><b>COMUNIDADES</b></p>
+                <p><b>COMUNIDADES</b></p>
                 <p>Para Artistas</p>
                 <p>Desarrolladores</p>
                 <p>Publicidad</p>
@@ -263,16 +242,18 @@
             </div>
 
             <div class="enlaces">
-                <p style="font-size:17px"><b>ENLACES UTILES</b></p>
+                <p class="text-enlaces"><b>ENLACES UTILES</b></p>
                 <p>Asistencia</p>
                 <p>Reproductor web</p>
                 <p>App gratis para movil</p>
             </div>
 
             <div class="redes-sociales">
-                <p>Instagram</p>
-                <p>Facebook</p>
-                <p>Twitter</p>
+                
+                <!-- Enlaces -->
+                <a href="#" class="fa fa-facebook"></a>
+                <a href="#" class="fa fa-instagram"></a>
+                <a href="#" class="fa fa-twitter"></a>
             </div>
         </div>
 

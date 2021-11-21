@@ -7,14 +7,33 @@ body{
 
 /*---------------- SCROLL-BAR ---------------- */
 
-/* Se oculta el scrollbar */
-body::-webkit-scrollbar{    display: none;  }
+/* Estilo del scroll */
+
+body::-webkit-scrollbar{
+
+    width: 8px;
+    height: 8px;
+
+    background: linear-gradient(to bottom, rgb(197, 0, 66, 0.5), rgba(255, 38, 38, 0.5));
+}
+
+body::-webkit-scrollbar-thumb{
+
+    background-color: #FFE6E6;
+    border-radius: 5px;
+}
+
+/* Suavizado */
+
+html{
+    scroll-behavior: smooth;
+}
 
 /* ---------------- FIN DEL SCROLL-BAR ---------------- */
 /*---------------- NAVEGADOR ----------------*/
 nav{
     width: 100%;
-    height: 60px;
+    height: 70px;
     background-color: rgb(19, 19, 19);
     display: flex;
     justify-content:space-evenly;
@@ -31,31 +50,34 @@ nav a:first-child{
     height: 20px;
     /* justify-items: center; */
     padding: 0;
+    text-align: center;
 }
 
 nav a, p{
 
     width: 70px;
     height: 35px;
-    font-size: 15px;
-    padding: 20px 30px 1px 30px;
+    font-size: 18px;
+    padding: 25px 30px 1px 30px;
     text-decoration: none;
     color: white;
     text-align: center;
+
 }
 
 nav p{
-    padding: 3px 0px 0px 0px;
+    padding: 10px 0px 0px 0px;
     /* background-color: blueviolet; */
 }
 
 nav a:last-child{
-    width: 100px;
+    width: 7%;;
 }
 
 .icono-nav img{
     width: 35px;
     padding: 13px;
+    padding-top: 18px;
     margin-left: 5px;
 }
 
@@ -305,7 +327,7 @@ div#mp3_player > canvas {
 /*---------------- Information ----------------*/
 .information{
     width: 100%;
-    height: 520px;
+    height: 700px;
     background-color: #FF2626;
     display: flex;
 }
@@ -322,15 +344,15 @@ div#mp3_player > canvas {
 .information1 p{
 
     width: 50%;
-    margin: 80px 0px;
-    font-size: 28px;
+    margin: 90px 0px;
+    font-size: 48px;
     position:absolute;
 }
 
 .information .girl{
     /* Tamaño */
-    width: 35%;
-    height: 50%;
+    width: 30%;
+    height: 70%;
 
     /* Bordes */
     border-top-left-radius: 80%;
@@ -338,7 +360,7 @@ div#mp3_player > canvas {
     border-bottom-right-radius: 80%;
     border-bottom-left-radius: 30%;
 
-    margin: 150px 0px 50px 50px;
+    margin: 150px 60px 150px 50px;
     background-color: #FFE6E6;
     z-index: 3;
 }
@@ -353,8 +375,8 @@ div#mp3_player > canvas {
 /* s-i significa Sound-Icon */
 .s-i{
     /* Tamaño y separacion */
-    width: 7%;
-    height: 10%;
+    width: 17%;
+    height: 30%;
     margin-right: 30%;
 }
 
@@ -362,13 +384,13 @@ div#mp3_player > canvas {
 
     /* Posicion y rotacion */
     transform: rotate(-25deg);
-    margin: 10% 30% 0 5%;
+    margin: 3% 30% 0 2%;
 }
 
 .sound-icon-2{
 
     /* Posicion y rotacion */
-    margin-top: 38%;
+    margin-top: 32%;
     transform: rotate(25deg);
 }
 
@@ -376,9 +398,9 @@ div#mp3_player > canvas {
     
     /* Posicion y rotacion */
     transform: rotate(30deg);
-    width: 20%;
-    height: 25%;
-    margin: 4% 4% 0 auto;
+    width: 40%;
+    height: 50%;
+    margin: 2% 4% 0 auto;
 }
 
 /*---------------- Informacion de Algunas Funciones ----------------*/
@@ -386,13 +408,11 @@ div#mp3_player > canvas {
 .funciones-info{
     /* Tamaño */
     width: 100%;
-    height: 800px;
+    height: 1050px;
 
     /* Fondo */
     padding-top: 10px;
-    background: #be1212;  /* fallback for old browsers */
-    /* background: -webkit-linear-gradient(to bottom, #f01c1c 80%, #0a0a0a);  Chrome 10-25, Safari 5.1-6 */
-    /* background: linear-gradient(to bottom, #f01c1c 82%, #0a0a0a); W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #be1212;
 
 }
 
@@ -400,7 +420,7 @@ div#mp3_player > canvas {
 
     /* Tamaño y Posicion */
     color:rgb(255, 240, 240);
-    font-size: 40px;
+    font-size: 60px;
     display: flex;
     justify-content: center;
 }
@@ -417,13 +437,13 @@ div#mp3_player > canvas {
 
     /* Tamaño */
     width: 30%;
-    height: 400px;
+    height: 500px;
     border-radius: 5%;
 
     /* Posicion */
     text-align: center;
     justify-items: center;
-    margin-bottom: 5%;
+    margin-bottom: 3%;
 
     /* Color */
     background: #ff1d1d; 
@@ -437,7 +457,7 @@ div#mp3_player > canvas {
 
 .description h3{
     color:rgb(255, 230, 230);
-    font-size: 30px;
+    font-size: 40px;
 
     margin-top: 0;
     margin-bottom: 0;
@@ -445,10 +465,13 @@ div#mp3_player > canvas {
 
 .description p{
     width: 80%;
+    font-size: 20px;
 }
 
 .card img{
     
+    width: 30%;
+
     background-color: #FFE6E6;
     padding: 10px 10px 0px 10px;
 
@@ -461,11 +484,8 @@ div#mp3_player > canvas {
 /*---------------- Footer ----------------*/
 footer{
     width: 100%;
-    height: 370px;
+    height: 450px;
     background-color: rgb(8, 8, 8);
-    /* display: flex;
-    justify-content: space-evenly; */
-    /* background-color: #fff; */
 }
 
 .content-footer{
@@ -480,12 +500,11 @@ footer{
     padding-top: 0;
     padding-bottom: 0;
     margin-top:0;
-    /* background: green; */
 }
 
 .logo-footer img{
-    width: 20%;
-    height: 11%;
+    width: 16%;
+    height: 8%;
 
     padding-top: 0;
     margin: 10% 4% 0% 4%;
@@ -504,13 +523,13 @@ footer{
 .logo-footer p{
 
     width: 100%;
-    font-size: 22px;
+    font-size: 30px;
     color: #FFE6E6;
     text-align: left;
     text-decoration: none;
 
     /* background: red; */
-    margin-top: 22px;
+    margin-top: 40px;
     margin-bottom: 0;
     padding: 2px 5px 0px 3px;
 
@@ -522,7 +541,7 @@ footer div:not(:first-child){
     /* background-color: green; */
 }
 
-.empresa p, .comunidades p, .enlaces p, .redes-sociales p{
+.empresa p, .comunidades p, .enlaces p{
     width: 68%;
     padding: 0;
     margin: 0;
@@ -533,18 +552,62 @@ footer div:not(:first-child){
     /* background-color: red; */
 }
 
-.empresa p:hover, .enlaces p:hover{
+.redes-sociales{
+    display: flex;
+    flex-direction: column;
+
+    padding-top:0;
+    margin-top: 0;
+}
+
+
+.redes-sociales a{
+
+    text-decoration: none;
+    font-size: 23px;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    
+    display:flex;
+    justify-content: space-around;
+    justify-items: center;
+    margin-left: 40px;
+    margin-bottom: 40px;
+    
+    background-color: #c50042;
+    color: #fff;
+
+    border-radius: 50%;
+
+    transition: .2s ease-in-out;
+}
+
+.redes-sociales a:first-child{
+    margin-top:0;
+}
+
+.redes-sociales a:hover{
+    color: #FF2626;
+    transform: scale(1.2);
+}
+
+.empresa p:first-child, .comunidades:first-child, .enlaces:first-child{
+    font-size: 25px;
+}
+
+.empresa p:hover:not(:first-child), .enlaces p:hover:not(:first-child){
 
     color:#ffffff;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 25px;
 }
 
-.comunidades p:hover, .redes-sociales p:hover{
+.comunidades p:hover:not(:first-child), .redes-sociales p:hover{
 
     color: #FF2626;
     cursor: pointer;
-    font-size: 18px;
+    font-size: 25px;
 }
 
 .empresa, .comunidades, .enlaces, .redes-sociales{
@@ -559,13 +622,13 @@ footer .copyr{
     
     width: 50%;
     height: 15%;
-    /* background: green; */
 }
 
 .copyr p{
     width: 100%;
     padding-left:0;
-
+    margin: 0;
+    padding-top:0;
     /* background:red; */
 }
 
@@ -573,4 +636,252 @@ footer .copyr{
     color: #FF2626;
     cursor: pointer;
     /* font-size: 18px; */
+}
+
+
+/*-------------------------------------- Responsive -------------------------------------- */
+
+@media screen and (max-width: 1627px) {
+    
+    .sound-icon-2{
+    
+        /* Posicion y rotacion */
+        margin-top: 38%;
+    }
+}
+
+@media screen and (max-width: 1610px) {
+
+    .information1 p{
+
+        font-size: 45px;
+    }
+    
+    .sound-icon-2{
+
+        margin-top: 40%;
+    }
+
+    .text-enlaces{
+
+        font-size: 10px;
+    }
+}
+
+@media screen and (max-width: 1400px){
+
+    .sound-icon-2{
+
+        margin-top: 45%;
+        /* background-color: #000; */
+    }
+
+    .information .girl{
+
+        width: 35%;
+        height: 60%;
+
+        margin-top: 13%;
+        margin-right: 3%;
+    }
+
+    .information p{
+        font-size: 39px;
+    }
+
+    .funciones-info{
+        height: 950px;
+    }
+
+    .logo-footer img{
+        margin-top: 15%;
+    }
+}
+
+@media screen and (max-width: 1380px){
+
+    .sound-icon-2{
+        margin-top: 47%;
+    }
+
+    .logo-footer p{
+        width: 100%;
+        font-size: 27px;
+    }
+}
+
+@media screen and (max-width: 1150px){
+
+    .information{
+        height: 600px;
+    }
+
+    .sound-icon-2{
+        margin-top: 45%;
+    }
+
+    .logo-footer p{
+        width: 100%;
+        font-size: 27px;
+    }
+
+    .information1 p{
+        font-size: 32px;
+    }
+
+    .information .girl{
+
+        width: 38%;
+        height: 65%;
+
+        margin-top: 13%;
+        margin-right: 2%;
+    }
+
+    .funciones-info{
+        height: 880px;
+    }
+
+    .card{
+        height: 415px;
+    }
+
+    .card p{
+        font-size: 18px;
+    }
+
+    .card h3{
+        font-size: 33px;
+    }
+
+    .card img{
+        width: 45%;
+        height: 25%;
+    }
+
+    .logo-footer img{
+        margin-top: 18%;
+    }
+}
+
+@media screen and (max-width: 1080px){
+
+    /* Nav */
+
+    nav a:not(:first-child){
+        /* background-color: green; */
+        font-size: 16px;
+    }
+
+    nav a:last-child{
+        width: 10%;
+    }
+
+    /* Fin del Nav */
+
+    /* Informacion */
+
+    .information .girl{
+        width: 35%;
+        height: 67%;
+
+        margin-right: 2%;
+    }
+
+    .information1{
+        margin-left: 0;
+    }
+
+    .information1 p{
+        font-size: 30px;
+    }
+
+    /* s-i significa Sound-Icon */
+    .s-i{
+        /* Tamaño y separacion */
+        width: 12%;
+        height: 25%;
+        margin-right: 30%;
+    }
+
+    .sound-icon-2{
+        margin-top: 49%;
+    }
+
+    /* Fin de informacion */
+
+    /* Funciones */
+
+    .funciones-info{
+        height: 700px;
+    }
+
+    .funciones-info h2{
+        font-size: 40px;
+    }
+
+    .card{
+        height: 375px;
+    }
+
+    .card .description p{
+        font-size: 16px;
+    }
+
+    /* Fin de Funciones */
+
+    /* Footer */
+
+    footer{
+        height: 370px;
+    }
+
+    .logo-footer{
+        padding:0;
+        margin: 25px 0 0 0;
+    }
+
+    .logo-footer p{
+        width: 100%;
+        height: 20px;
+        font-size: 23px;
+
+        padding:0;
+        margin: 0;
+    }
+
+    .logo-footer img{
+        margin:0 5px 0 5px;
+        /* padding: 0; */
+    }
+
+    .enlace-logo{
+        width: 18%;
+        /* background-color: yellow; */
+        /* height: 0px; */
+    }
+
+    .empresa p:first-child, .comunidades p:first-child, .enlaces p:first-child{
+        font-size: 18px;
+        /* background-color: green; */
+        margin-bottom: 15%;
+    }
+
+    .enlaces p:first-child{
+        
+        margin-bottom: 17%;
+    }
+
+    .enlaces p:not( .enlaces p:first-child ), .empresa p:not( .empresa p:first-child ), .comunidades p:not( .comunidades p:first-child ){
+        font-size: 14px;
+    }
+
+    .enlaces p:not( .enlaces p:first-child ):hover, .empresa p:not( .empresa p:first-child ):hover, .comunidades p:not( .comunidades p:first-child ):hover{
+
+        font-size: 18px;
+    }
+
+
+
+    /* Fin del Footer */
 }
