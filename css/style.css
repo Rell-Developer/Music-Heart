@@ -45,10 +45,8 @@ nav a:nth-child(2){
 }
 
 nav a:first-child{
-    /* background: #BD1616; */
     width: 20px;
     height: 20px;
-    /* justify-items: center; */
     padding: 0;
     text-align: center;
 }
@@ -620,7 +618,7 @@ footer div{
 
 footer .copyr{
     
-    width: 50%;
+    width: 100%;
     height: 15%;
 }
 
@@ -629,6 +627,8 @@ footer .copyr{
     padding-left:0;
     margin: 0;
     padding-top:0;
+
+    font-size: 18px;
     /* background:red; */
 }
 
@@ -884,4 +884,212 @@ footer .copyr{
 
 
     /* Fin del Footer */
+}
+
+@media screen and (max-width: 770px){
+
+    /* ----------Nav---------- */
+
+    .icono-nav img{ margin-left: 10px;  }
+
+    nav a, p{   font-size: 15px;    }
+
+    nav a:nth-child(2){ margin-left: 15%;   }
+
+    nav a:last-child{   width:100px;    }
+
+    /* ---------- Fin del Nav ---------- */
+
+    /* ---------- Informacion ---------- */
+
+    .information{
+        height: 500px;
+    }
+
+    /* .information1{
+        background: green;
+    } */
+
+    .sound-icon-2{
+        margin-top: 50%;
+    }
+
+    .information1 p{
+        width: 45%;
+        font-size: 22px;
+
+        margin-top: 5%;
+    }
+
+    /* s-i significa Sound-Icon */
+    .s-i{
+        /* Tamaño y separacion */
+        height: 20%;
+        margin-right: 30%;
+    }
+
+    .sound-icon-1{
+
+        /* Posicion y rotacion */
+        transform: rotate(-25deg);
+        margin: 1% 30% 0 2%;
+    }
+
+    .info-reproductor{
+        
+        /* Posicion y rotacion */
+        width: 30%;
+        height: 40%;
+        margin: 0% 4% 0 auto;
+    }
+
+    .information .girl{
+
+        width: 38%;
+        height: 50%;
+
+        margin-top: 20%;
+        margin-right: 0%;
+    }
+
+    /* ---------- Fin de Informacion ---------- */
+
+    /* ---------- Funciones ---------- */
+
+    .funciones-info{
+        height: 1050px;
+    }
+
+    .funciones{
+        /* display: flex;  */
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .card{
+        display: flex;
+        height: 415px;
+        width: 85%;
+        height: 240px;
+    }
+
+    .card p{
+        font-size: 16px;
+    }
+
+    .card h3{
+        font-size: 30px;
+        margin-top: 50px;
+    }
+
+    .card img{
+        width: 150px;
+        height: 150px;
+
+        margin-left: 25px;
+    }
+
+    /* --------------Fin de Funciones--------------  */
+}
+
+@media screen and (max-width: 550px){
+
+    /* ----------Nav---------- */
+    /*menu hamburguesa por hacer  */
+    .elementos-nav{
+        display: none;
+    }
+
+    /* .icono-nav img{ margin-left: 20px;  }
+
+    nav a, p{   font-size: 10px;    }
+
+    nav a:nth-child(2){ margin-left: 15%;   }
+
+    nav a:last-child{   width:50px;    } */
+
+    /* ---------- Fin del Nav ---------- */
+
+    /* ---------- Informacion ---------- */
+
+    .information{
+        height: 400px;
+    }
+
+    .information .girl{
+
+        width: 35%;
+        height: 50%;
+
+        margin-top: 27%;
+        margin-right: 0%;
+
+        border-radius: 50%;
+    }
+
+    .sound-icon-2{
+        margin-top: 60%;
+    }
+
+    .information1 p{
+        width: 45%;
+        font-size: 20px;
+
+        margin-top: 5%;
+    }
+
+    /* s-i significa Sound-Icon */
+    .s-i{
+        /* Tamaño y separacion */
+        height: 10%;
+        margin-right: 30%;
+    }
+
+    .sound-icon-1{
+
+        /* Posicion y rotacion */
+        transform: rotate(-25deg);
+        margin: 1% 30% 0 10%;
+    }
+
+    .info-reproductor{
+        
+        /* Posicion y rotacion */
+        width: 20%;
+        height: 30%;
+        margin: 0% 4% 0 auto;
+    }
+
+    /* ---------- Fin de Informacion ---------- */
+
+    /* ---------- Funciones ---------- */
+
+    .funciones-info{
+        height: 1050px;
+    }
+
+    .funciones-info h2{
+        font-size: 33px;
+    }
+
+    .card p{
+        background:green;
+        font-weight: 100px;
+        font-size: 40px;
+    }
+
+    .card h3{
+        font-size: 25px;
+        margin-top: 50px;
+    }
+
+    .card img{
+        width: 130px;
+        height: 160px;
+
+        margin-left: 25px;
+    }
+
+    /* --------------Fin de Funciones--------------  */
 }
